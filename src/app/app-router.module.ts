@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path: 'servers',
     component: ServersComponent,
-    canActivate:[AuthGuard],
+    canActivateChild:[AuthGuard],//all child routes not a parent one
     children: [
       {
         path: ':id',

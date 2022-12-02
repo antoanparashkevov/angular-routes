@@ -4,7 +4,7 @@ export class FakeAuth {
   isAuthenticated() {
     return new Promise((resolve,reject)=>{
       setTimeout( () =>
-        resolve(this.loggedIn),2000)
+        resolve(this.loggedIn),800)
     })
 
   }
@@ -12,6 +12,7 @@ export class FakeAuth {
   login() {
     this.loggedIn = true;
   }
+
   logout() {
     this.loggedIn = false;
 
