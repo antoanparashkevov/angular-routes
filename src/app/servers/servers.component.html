@@ -12,6 +12,11 @@
   <div class="col-xs-12 col-sm-4">
 <!--    <a routerLink="/servers">Reload</a>-->
     <button (click)="reloadPage()">Reload page</button>
+    <a
+      [routerLink]="['/server', 1]"
+      [queryParams]="{allowEdit:true}"
+      fragment="loading"
+    >Load Server 1</a>
     <app-edit-server></app-edit-server>
     <hr>
     <app-server></app-server>
