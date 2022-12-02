@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {RouterModule, Routes} from "@angular/router";
 
 
 import { AppComponent } from './app.component';
@@ -12,7 +11,11 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
+
 import AppRouterModule from "./app-router.module";
+
+import {AuthGuard} from "./auth-guard.service";
+import {FakeAuth} from "./fake-auth.service";
 
 
 
@@ -31,7 +34,7 @@ import AppRouterModule from "./app-router.module";
     FormsModule,
     AppRouterModule
   ],
-  providers: [ServersService],
+  providers: [ServersService, AuthGuard, FakeAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
