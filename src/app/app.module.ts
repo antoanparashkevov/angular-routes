@@ -35,6 +35,10 @@ const routes: Routes = [
       {
         path: ':id',
         component: ServerComponent
+      },
+      {
+        path: ':id/edit',
+        component: EditServerComponent
       }
     ]
   },
