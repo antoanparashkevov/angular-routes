@@ -12,38 +12,9 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
+import AppRouterModule from "./app-router.module";
 
-const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'users',
-    component: UsersComponent,
-    children: [
-      {
-        path: ':id/:name',
-        component: UserComponent
-      },
-    ]
-  },
-  {
-    path: 'servers',
-    component: ServersComponent,
-    children: [
-      {
-        path: ':id',
-        component: ServerComponent
-      },
-      {
-        path: ':id/edit',
-        component: EditServerComponent
-      }
-    ]
-  },
 
-]
 
 @NgModule({
   declarations: [
@@ -58,7 +29,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    AppRouterModule
   ],
   providers: [ServersService],
   bootstrap: [AppComponent]
