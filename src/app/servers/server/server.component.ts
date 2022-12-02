@@ -29,7 +29,7 @@ export class ServerComponent implements OnInit {
   }
 
   onEdit() {
-    this.router.navigate(['edit'], {relativeTo: this.currentRoute})//relative path since we are already on /servers/:id
+    this.router.navigate(['edit'], {relativeTo: this.currentRoute, queryParamsHandling: 'preserve'})//relative path since we are already on /servers/:id
   }
 
 }
