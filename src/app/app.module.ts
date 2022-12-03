@@ -16,6 +16,7 @@ import AppRouterModule from "./app-router.module";
 
 import {AuthGuard} from "./auth-guard.service";
 import {FakeAuth} from "./fake-auth.service";
+import {CanDeactivateGuard} from "./can-deactivate-guard.service";
 
 
 
@@ -34,7 +35,7 @@ import {FakeAuth} from "./fake-auth.service";
     FormsModule,
     AppRouterModule
   ],
-  providers: [ServersService, AuthGuard, FakeAuth],
+  providers: [ServersService, AuthGuard, FakeAuth, CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
